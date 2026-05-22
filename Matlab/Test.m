@@ -13,5 +13,5 @@ clc;
 %plot(x,y1);
 %
 %a
-a = 0
-a = ~a
+test = zeros(10);
+t = size(test)

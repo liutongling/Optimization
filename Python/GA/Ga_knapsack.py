@@ -25,10 +25,6 @@ class Ga_knapsack:
         return C
 
 
-
-
-
-
     def GA_0knapsack(self):
         for k in range(self.G):
             result = np.zeros(self.NP,dtype=int)
@@ -43,11 +39,6 @@ class Ga_knapsack:
             Best = self.n[Bestidx,:]
 
             result = (result - minVal)/(maxVal - minVal)
-
-             # 保存最优解
-
-
-
             # 进行概率的转换
             sumre = sum(result)
             result = result / sumre
@@ -86,8 +77,6 @@ class Ga_knapsack:
                         self.nn[i,j] = not self.nn[i,j]
             self.n = self.nn[:]
             #把最优解保存到第一个
-            print(Best.shape)
-            print(Best)
-            self.n[0,:] = Best[0,:]
-            self.trace[k] = maxVal
+            self.n[0,:] = Best[0,:]            # Best 有可能不止一个，选择第一个。
+            self.trace[k] = maxVal             # 保存最优解
         return self.trace
